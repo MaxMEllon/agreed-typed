@@ -101,7 +101,6 @@ const defaultExamples = {
 function getExampleFromSchema(body: object): object | undefined {
   const maybeProperties = body['properties']
   if (typeof maybeProperties === 'undefined') return undefined
-  console.log(maybeProperties)
   return Object.keys(maybeProperties).reduce((acc, cur) => maybeProperties[cur].examples ? ({
     ...acc,
     [cur]: maybeProperties[cur].examples
